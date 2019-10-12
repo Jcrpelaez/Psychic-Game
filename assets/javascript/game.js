@@ -1,34 +1,58 @@
-// Created an array of the computer choices and user guesses
-// var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-// var userGuesses =     ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var userGuesses = ["a"];
-var computerChoices = ["a"];
+// Created array for computer Choices
+var compChoices = ("a")
+console.log(compChoices)
+// Created variables to hold number of wins, losses, guesses, and guesses left
+var wins = 0;
+var guessesLeft = 9;
+var userGuess =[];
 
-// Created wins/losses and guesses variables
-var Wins = 0;
-// var Loss = 0;
-// var guessesLeft = 9;
-// var userGuesses = event;
 
-// Create variable that refrence the html
+
+
 var directionsText = document.getElementById("directions-text");
-// var userGuesses = document.getElementById("userGuesses-text");
+var userChoices = document.getElementById("userchoice-text");
+var computerChoiceText = document.getElementById("computerchoice-text");
 var winsText = document.getElementById("wins-text");
-// var guessesLeft = document.getElementById("Guessesleft-text");
+var lossesText = document.getElementById("losses-text");
 
-// Need to create a key event function
-
-// Determines which key is pressed
-
-// Computer randomly chooses A-z
-var computerChoices =
-  computerChoices[Math.floor(Math.random() * computerChoices.length)];
-{
-  // I need to create an array that loops until the user has run out of guesses while also adding to the wins and losses colum
-  for (i = 0; i < 10; i++) {
-    if (userGuesses === computerChoices) {
-      wins++;
-    } else userGuesses !== computerChoices;
-    loss++;
-  }
+var clearUserGuesses = function() {
+  userGuess = []
 }
+
+
+var compChoices =
+  compChoices[Math.floor(Math.random() * compChoices.length)];
+console.log(compChoices)
+// when User presses key it launches a function to execute process
+document.onkeyup = function (event) {
+
+  //when user preses letter key it is stored as var userGuess
+  var userGuess = event.key;
+  console.log("userGuess      " + userGuess);
+
+ 
+  if (userGuess === compChoices) {
+    wins++;
+    guessesLeft = 9;
+    clearUserGuesses()
+    } alert("You Win!")
+
+
+  if (userGuess !== compChoices) {
+    guessesLeft--;
+    console.log('userGuess ', userGuess );
+    userGuess.push(userGuesses);
+
+  if (guessesLeft < 1) {
+      alert("You lose!");
+      guessesLeft = 9;
+      userGuess = [];
+      losses++;
+    }
+  }
+  // Rewrites the html with updated values
+
+} 
+
+
+
