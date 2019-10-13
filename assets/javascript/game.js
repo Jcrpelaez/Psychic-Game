@@ -1,58 +1,61 @@
-// Created array for computer Choices
-var compChoices = ("a")
-console.log(compChoices)
-// Created variables to hold number of wins, losses, guesses, and guesses left
+// Created variable columns
 var wins = 0;
+var losses = 0;
 var guessesLeft = 9;
-var userGuess =[];
+var userGuess = [];
 
+// Created array for computers choices a-z
+var computersChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",]
 
-
-
-var directionsText = document.getElementById("directions-text");
-var userChoices = document.getElementById("userchoice-text");
-var computerChoiceText = document.getElementById("computerchoice-text");
-var winsText = document.getElementById("wins-text");
-var lossesText = document.getElementById("losses-text");
-
-var clearUserGuesses = function() {
+// created variable to clear the game after a win or loss
+var clearGame = function() {
   userGuess = []
-}
+};
+
+// created variable for the computer to choose a random letter
+var randomchoice = computersChoice[Math.floor(Math.random() * computersChoice.length)];
+console.log(randomchoice)
 
 
-var compChoices =
-  compChoices[Math.floor(Math.random() * compChoices.length)];
-console.log(compChoices)
-// when User presses key it launches a function to execute process
-document.onkeyup = function (event) {
+document.onkeyup = function(event) {
+  console.log("userGuess    " + keypressed);
+   var keypressed = event.key;
 
-  //when user preses letter key it is stored as var userGuess
-  var userGuess = event.key;
-  console.log("userGuess      " + userGuess);
+   if (computersChoice === keypressed){
+     win++;
+     guessesLeft = 9;
+     clearGame();
+   } alert("You Win!")
 
- 
-  if (userGuess === compChoices) {
-    wins++;
-    guessesLeft = 9;
-    clearUserGuesses()
-    } alert("You Win!")
+   if (computersChoice !== keypressed) {
+     guessesLeft--;
+     console.log('userGuess    ', userGuess);
+     userGuess.push(userGuess)
+   }
+   if (guessesLeft < 1){
+     alert("You lose!");
+   }
+     
+
+   
 
 
-  if (userGuess !== compChoices) {
-    guessesLeft--;
-    console.log('userGuess ', userGuess );
-    userGuess.push(userGuesses);
+  
 
-  if (guessesLeft < 1) {
-      alert("You lose!");
-      guessesLeft = 9;
-      userGuess = [];
-      losses++;
-    }
-  }
-  // Rewrites the html with updated values
 
-} 
+
+
+
+
+
+
+
+
+
+
+
+
+};
 
 
 
