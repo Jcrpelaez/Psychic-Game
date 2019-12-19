@@ -6,5 +6,4 @@ Created a letter guessing game using javascript.
 
 ### Screenshot
 
-![Psychic Game Screenshot](https://raw.github.com/Jcrpelaez/Psychic-Game/master/screenshots/Psychic-Game.png)
-![Psychic game Screenshot](https://raw.gitbub.com/Jcrpelaez/Psychic-Game/assets/images/ScreenShot2019-12-19at11.15.30AM.png)
+![Screen Shot 2019-12-19 at 11 15 30 AM](https://user-images.githubusercontent.com/52987850/71196131-ffa7b680-2254-11ea-9b4f-58a387ecde4d.png)
